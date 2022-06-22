@@ -10,7 +10,7 @@ export async function getBeanies() {
             image,
             astroSign,
             title
-            `)
+            `);
         // .match({ id });
         // .single();
 
