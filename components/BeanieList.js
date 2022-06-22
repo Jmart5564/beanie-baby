@@ -19,8 +19,8 @@ export function BeanieCard({ beanie }) {
 
     li.classList.add('beanie-card');
 
-    p.textContent = beanie.name;
-    img.src = `./assets/beanies/${beanie.type}.jpeg`;
+    p.textContent = beanie.title;
+    img.src = beanie.image;
     a.href = `.detail/?id=${beanie.id}`;
 
     a.append(p, img);

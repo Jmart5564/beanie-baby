@@ -1,8 +1,8 @@
 
 
 export default function createBeanieName(root) {
-    return ({ name }) => {
-        document.title = name;
-        root.textContent = name;
+    return ({ title }) => {
+        document.title = title;
+        root.textContent = title;
     };
 }

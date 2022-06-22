@@ -22,7 +22,7 @@ const BeanieName = createBeanieName(document.querySelector('h1'));
 const BeanieDetail = createBeanieDetail(document.querySelector('#beanie-detail'));
 
 function display() {
-    BeanieName({ name: beanie.name });
+    BeanieName({ title: beanie.title });
     BeanieDetail({ beanie });
 }
 
