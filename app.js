@@ -16,4 +16,4 @@ function display() {
 }
 
 // Call display on page load
-display();
+handlePageLoad();
