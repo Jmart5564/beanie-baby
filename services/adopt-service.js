@@ -7,9 +7,17 @@ export async function getBeanies() {
         .from('beanie_babies')
         .select(`
             id,
+            link,
             image,
+            theme,
             astroSign,
-            title
+            color,
+            title,
+            birthday,
+            releaseDate,
+            releaseYear,
+            animal,
+            subtheme
             `);
         
 
