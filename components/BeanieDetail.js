@@ -6,6 +6,8 @@ export default function createBeanieDetail(root) {
     const description = root.querySelector('.desription');
 
     return ({ beanie }) => {
-        
-    }
+        img.src = beanie.image;
+        //intro.textContent = 
+        description.textContent = beanie.description;
+    };
 }

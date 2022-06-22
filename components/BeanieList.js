@@ -21,7 +21,7 @@ export function BeanieCard({ beanie }) {
 
     p.textContent = beanie.title;
     img.src = beanie.image;
-    a.href = `.detail/?id=${beanie.id}`;
+    a.href = `./detail/?id=${beanie.id}`;
 
     a.append(p, img);
 
