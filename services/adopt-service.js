@@ -4,7 +4,7 @@ const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 export async function getBeanies() {
     const response = await client
-        .from('beanies')
+        .from('beanie_babies')
         .select(`
             id,
             image,
@@ -18,7 +18,7 @@ export async function getBeanies() {
 
 export async function getBeanie(id) {
     const response = await client 
-        .from('beanies')
+        .from('beanie_babies')
         .select()
         .match({ id })
         .single();
