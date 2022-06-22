@@ -11,8 +11,7 @@ export async function getBeanies() {
             astroSign,
             title
             `);
-        // .match({ id });
-        // .single();
+        
 
     return response.data;
 }
