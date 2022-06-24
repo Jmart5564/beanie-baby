@@ -1,1 +1,19 @@
 /* CSS for home page (index.html) */
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section img {
+    height: 150px;
+    width: 250px;
+    object-fit: scale-down;
+}
+
+
+.beanie-card {
+    display: inline-block;
+
+}
+
