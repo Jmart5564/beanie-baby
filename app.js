@@ -3,8 +3,11 @@ import { getBeanies } from '../services/adopt-service.js';
 
 import createBeanieList from './components/BeanieList.js';
 import createPaging from './components/Paging.js';
+import createFilter from './components/Filter.js';
 
 // import component creators
+let title = '';
+let animal = '';
 let page = 1;
 let pageSize = 5;
 let totalPages = 0;
@@ -12,6 +15,9 @@ let beanies = [];
 
 async function handlePageLoad() {
     const params = new URLSearchParams(window.location.search);
+    title = params.get('title') || '';
+    animal = params.get('animal') || '';
+
 
 
     page = Number(params.get('page')) || 1;
@@ -21,11 +27,20 @@ async function handlePageLoad() {
     const end = (page * pageSize) - 1;
 
     //beanies = await getBeanies();
-    const { data, count } = await getBeanies({ start, end });
+    const { data, count } = await getBeanies(title, animal, { start, end });
     beanies = data;
 
     totalPages = Math.ceil(count / pageSize);
     display();
+}
+
+function handleFilter(title, animal) {
+    const params = new URLSearchParams(window.location.search);
+    params.set('title', title);
+    params.set('animal', animal);
+    params.set('page', 1);
+    window.location.search = params.toString();
+
 }
 
 function handlePaging(change, pageSize) {
@@ -48,12 +63,14 @@ function handlePaging(change, pageSize) {
 // - pass any needed handler functions as properties of an actions object
 const BeanieList = createBeanieList(document.querySelector('#beanie-list')); 
 const Paging = createPaging(document.querySelector('#paging'), { handlePaging });
+const Filter = createFilter(document.querySelector('.filter'), { handleFilter });
 
 // Roll-up display function that renders (calls with state) each component
 function display() {
     // Call each component passing in props that are the pieces of state this component needs
     Paging({ page, pageSize, totalPages });
     BeanieList({ beanies });
+    Filter ({ title, animal });
 }
 
 // Call display on page load
