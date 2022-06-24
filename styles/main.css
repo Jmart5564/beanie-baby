@@ -11,28 +11,6 @@ body {
     background-color: black;
 }
 
-/* @-webkit-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
-}
-@-moz-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
-}
-@-o-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
-}
-@keyframes rainbow { 
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
-
-} */
-
 ul {
     height: 100%;
     padding-bottom: 30px;
@@ -47,48 +25,14 @@ ul {
         to {background-position:0 -200%}
     }
 
-        /* -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
-        background-size: 200% 200%;
-        
-        -webkit-animation: rainbow 15s linear infinite;
-        -z-animation: rainbow 15s linear infinite;
-        -o-animation: rainbow 15s linear infinite;
-        animation: rainbow 15s linear infinite;}
-    
-    @-webkit-keyframes rainbow {
-        0%{background-position:0% 82%}
-        50%{background-position:100% 19%}
-        100%{background-position:0% 82%}
-    }
-    @-moz-keyframes rainbow {
-        0%{background-position:0% 82%}
-        50%{background-position:100% 19%}
-        100%{background-position:0% 82%}
-    }
-    @-o-keyframes rainbow {
-        0%{background-position:0% 82%}
-        50%{background-position:100% 19%}
-        100%{background-position:0% 82%}
-    }
-    @keyframes rainbow { 
-        0%{background-position:0% 82%}
-        50%{background-position:100% 19%}
-        100%{background-position:0% 82%}
-    
-    
-} */
 
-header {
+/* header {
     position: sticky;
     top: 0;
     display: flex;
     align-items: center;
     background-color: var(--header-background);
-}
+} */
 
 main {
     height: 100%;
