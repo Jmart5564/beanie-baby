@@ -8,6 +8,7 @@ import createFilter from './components/Filter.js';
 // import component creators
 let title = '';
 let animal = '';
+let astroSign = '';
 let page = 1;
 let pageSize = 5;
 let totalPages = 0;
@@ -17,6 +18,7 @@ async function handlePageLoad() {
     const params = new URLSearchParams(window.location.search);
     title = params.get('title') || '';
     animal = params.get('animal') || '';
+    astroSign = params.get('astroSign') || '';
 
 
 
@@ -27,17 +29,18 @@ async function handlePageLoad() {
     const end = (page * pageSize) - 1;
 
     //beanies = await getBeanies();
-    const { data, count } = await getBeanies(title, animal, { start, end });
+    const { data, count } = await getBeanies(title, animal, astroSign, { start, end });
     beanies = data;
 
     totalPages = Math.ceil(count / pageSize);
     display();
 }
 
-function handleFilter(title, animal) {
+function handleFilter(title, animal, astroSign) {
     const params = new URLSearchParams(window.location.search);
     params.set('title', title);
     params.set('animal', animal);
+    params.set('astroSign', astroSign);
     params.set('page', 1);
     window.location.search = params.toString();
 
@@ -70,7 +73,7 @@ function display() {
     // Call each component passing in props that are the pieces of state this component needs
     Paging({ page, pageSize, totalPages });
     BeanieList({ beanies });
-    Filter ({ title, animal });
+    Filter ({ title, animal, astroSign });
 }
 
 // Call display on page load
